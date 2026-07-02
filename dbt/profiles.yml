@@ -1,0 +1,12 @@
+nyc_taxi:
+  target: prod
+  outputs:
+    prod:
+      type: trino
+      host: trino
+      port: 8080
+      user: admin
+      catalog: iceberg
+      schema: analytics
+      threads: 4
+      http_scheme: http

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: gold
+    catalog: iceberg
+    schema: gold
+    tables:
+      - name: fact_trips
+      - name: dim_zone
+      - name: dim_payment_type
+      - name: dim_date

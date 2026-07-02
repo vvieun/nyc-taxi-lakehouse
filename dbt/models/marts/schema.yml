@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: daily_revenue
+    columns:
+      - name: pickup_date
+        tests:
+          - not_null
+          - unique
+      - name: trip_count
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: top_pickup_zones
+    columns:
+      - name: zone
+        tests:
+          - not_null
+      - name: trip_count
+        tests:
+          - not_null
+
+  - name: payment_breakdown
+    columns:
+      - name: payment_description
+        tests:
+          - not_null
+          - unique
+      - name: trip_count
+        tests:
+          - not_null
