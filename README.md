@@ -32,6 +32,10 @@ download_tlc -> ingest_bronze -> bronze_to_silver -> silver_to_gold -> data_qual
 - **gold** — dimensional star schema: `fact_trips`, `dim_zone`, `dim_date`, `dim_payment_type`.
 - **analytics** — dbt marts on top of gold through Trino.
 
+## data
+
+A real public dataset — [NYC TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) from the New York City Taxi & Limousine Commission. `ingestion/download_tlc.py` pulls the yellow taxi trips (monthly parquet) and the `taxi_zone_lookup.csv` reference straight from the official TLC storage into MinIO. The set of months is configured by `TLC_MONTHS` in `.env` (default `2023-01`, `2023-02`, `2023-03`).
+
 ## structure
 
 ```
